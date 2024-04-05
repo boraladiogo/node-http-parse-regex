@@ -1,0 +1,12 @@
+{
+  "name": "node-http-parse-regex",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "./src/server.js",
+  "scripts": {
+    "dev": "node --watch src/server.js"
+  },
+  "repository": "git@github.com:boraladiogo/node-http-parse-regex.git",
+  "author": "Diogo Martins <boraladiogo@gmail.com>",
+  "license": "MIT"
+}
