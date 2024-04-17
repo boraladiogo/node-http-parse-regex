@@ -9,6 +9,8 @@
         "sourceType": "module"
     },
     "rules": {
-        "indent": ["error", 4]
+        "indent": [ "error", 4 ],
+        "import/extensions": ["error", "always"],
+        "import/prefer-default-export": "off"
     }
 }
