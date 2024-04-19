@@ -1,5 +1,5 @@
 import http from 'node:http';
-import { routes } from './routes.js'
+import { routes } from './routes.js';
 
 const PORT = 3333;
 const server = http.createServer((req, res) => {
@@ -8,10 +8,10 @@ const server = http.createServer((req, res) => {
     ));
 
     if (route) {
-        res.end('Ok');
+        route.handler(req, res);
     } else {
-        res.writeHead(404).end();
+        res.writeHead(404).end(JSON.stringify({ error: 'Page not found.' }));
     }
 });
 
-server.listen(PORT, console.log(`Server running at http://localhot:${ PORT }`))
+server.listen(PORT, console.log(`Server running at http://localhost:${PORT}`));
