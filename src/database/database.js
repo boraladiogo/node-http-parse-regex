@@ -1,6 +1,6 @@
 import fs from 'node:fs/promises';
 
-export class Database {
+class Database {
     #database = {};
 
     #save() {
@@ -65,3 +65,5 @@ export class Database {
         return { rows: this.#database[table] };
     }
 }
+
+export const database = new Database('data.json');
