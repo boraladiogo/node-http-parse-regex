@@ -8,6 +8,11 @@ const server = http.createServer((req, res) => {
     ));
 
     if (route) {
+        res.send = (statusCode, payload) => {
+            res.writeHead(statusCode, { 'Content-Type': 'Application/json' });
+            res.end(JSON.stringify(payload));
+        };
+
         route.handler(req, res);
     } else {
         res.writeHead(404).end(JSON.stringify({ error: 'Page not found.' }));
